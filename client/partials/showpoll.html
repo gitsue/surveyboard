@@ -1,0 +1,26 @@
+<div ng-controller='pollsController'>
+<style type="text/css">
+	#table {
+		text-align: center;
+	}
+</style>
+	<a href="#/dashboard">Go to Polls</a>
+	<h1>{{curr_poll.question}}</h1>
+	<p>Click the Vote button to choose one.</p>
+	<table id="table">
+		<thead>
+			<tr>
+				<th>Option</th>
+				<th>Current Count of Votes</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat='o in curr_poll.options track by $index'>
+				<td>{{o.option}}</td>
+				<td>{{o.vote_count}}</td>
+				<td><button ng-click='addVote($index, curr_poll._id)'>Vote</button></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

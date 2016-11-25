@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+	<script type="text/javascript" src="angular/angular.js"></script>
+	<script type="text/javascript" src="angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="angular-cookies/angular-cookies.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="./controllers/users.js"></script>
+	<script type="text/javascript" src="./controllers/polls.js"></script>
+	<script type="text/javascript" src="./factories/userFactory.js"></script>
+	<script type="text/javascript" src="./factories/pollFactory.js"></script>
+	<title>Login</title>
+</head>
+<body>
+	<div ng-controller='usersController'>
+		<div ng-view></div>
+	</div>
+</body>
+</html>

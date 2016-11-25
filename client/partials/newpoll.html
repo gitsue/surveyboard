@@ -1,0 +1,22 @@
+<div ng-controller='pollsController'>
+	<style type="text/css">
+		p {
+			color: red;
+		}
+	</style>
+	<h1>Put the question and options here:</h1>
+	<a href="#/dashboard">Cancel</a>
+	<form name='pollForm' ng-submit='addPoll(pollForm.$valid)' novalidate>
+		Question: <input type="text" ng-model='newPoll.question' name="question" required minlength="8">
+		Option1: <input type="text" name="option1" ng-model='newPoll.option1' required minlength="3">
+		Option2: <input type="text" name="option2" ng-model='newPoll.option2' required minlength="3">
+		Option3: <input type="text" name="option3" ng-model='newPoll.option3' required minlength="3">
+		Option4: <input type="text" name="option4" ng-model='newPoll.option4' required minlength="3">
+		<input type="submit" value="Create Poll" ng-disabled='pollForm.$invalid'>
+	</form>
+	<p ng-show="pollForm.question.$invalid || pollForm.question.$pristine">Question Field is required.</p>
+	<p ng-show="pollForm.option1.$invalid || pollForm.option1.$pristine">Option 1  Field is required.</p>
+	<p ng-show="pollForm.option2.$invalid || pollForm.option2.$pristine">Option 2  Field is required.</p>
+	<p ng-show="pollForm.option3.$invalid || pollForm.option3.$pristine">Option 3  Field is required.</p>
+	<p ng-show="pollForm.option4.$invalid || pollForm.option4.$pristine">Option 4  Field is required.</p>
+</div>
